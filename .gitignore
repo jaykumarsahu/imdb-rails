@@ -1,0 +1,19 @@
+/.bundle
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+.byebug_history
+/config/master.key
+/.idea
+/*.iml
+/.rubocop.yml
+/config/database.yml
+/*.log
+/*.gz
+/dump.rdb
+/node_modules
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
