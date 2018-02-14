@@ -8,11 +8,9 @@ class Api::V1::RegistrationsController < ApplicationController
     begin
       user = User.new(user_params)
       if user.save
-        msg = "User has been signed up successfully."
         render json: {
           status: "SUCCESS",
-          message: msg,
-          user: user.build_json
+          message: "User has been signed up successfully.",
         }, status: :ok
       else
         render json: { status: "FAILED", error: user.errors.full_messages.join("\n") }, status: :ok
