@@ -1,7 +1,7 @@
-user = User.new(
-  first_name: 'first_name',
+user = User.create(
+  first_name: 'AQI',
   last_name: 'last_name',
-  email: 'user@example.com',
+  email: 'USER@example.com',
   phone: '12345687',
   address: 'IT park',
   city: 'Indore',
@@ -12,7 +12,24 @@ user = User.new(
   password_confirmation: '12345678'
 )
 
-user.save
+# user.save
+
+user = User.create(
+  first_name: 'first_name',
+  last_name: 'last_name',
+  email: 'ADMIN@example.com',
+  phone: '12345687',
+  address: 'IT park',
+  admin: true,
+  city: 'Indore',
+  state: 'MP',
+  zip: '452001',
+  country: 'IN',
+  password: '12345678',
+  password_confirmation: '12345678'
+)
+
+# user.save
 
 Product.find_or_create_by(name: "Iphone", description: "2edfrewfdew", price: 25.5)
 

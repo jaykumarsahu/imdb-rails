@@ -12,7 +12,7 @@ class Api::V1::RegistrationsController < ApplicationController
         render json: {
           status: "SUCCESS",
           message: msg,
-          user: user.as_json(only: [:first_name, :last_name, :email, :phone, :address, :city, :state, :zip, :country])
+          user: user.build_json
         }, status: :ok
       else
         render json: { status: "FAILED", error: user.errors.full_messages.join("\n") }, status: :ok
