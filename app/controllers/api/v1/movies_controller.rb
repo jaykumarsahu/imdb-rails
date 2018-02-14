@@ -8,6 +8,10 @@ class Api::V1::MoviesController < ApplicationController
     end
   end
 
+  def create
+    binding.pry
+  end
+
   private
 
   def movies_params
