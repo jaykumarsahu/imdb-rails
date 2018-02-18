@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::API
 
   before_action :abc, :authenticate_request!
-  skip_before_action :authenticate_request!, only: :routing_error
+  skip_before_action :authenticate_request!, only: [:routing_error, :root]
+
+  def root
+    render plain: '<h1 style="text-align: center;">Welcome to IMDB-rails API.</h1>'.html_safe
+  end
 
   def routing_error
     render json: {error: "Invalid route"}
