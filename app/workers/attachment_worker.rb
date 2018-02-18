@@ -4,7 +4,6 @@ class AttachmentWorker
   def perform(movie_id, file_or_filepath)
     movie = Movie.find(movie_id)
     if movie.present?
-      binding.pry
       attachment = get_file(file_or_filepath)
       movie.image.attach(attachment) if attachment.present?
     end
