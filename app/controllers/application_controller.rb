@@ -1,8 +1,17 @@
 class ApplicationController < ActionController::API
 
-  before_action :authenticate_request!
+  before_action :abc, :authenticate_request!
+  skip_before_action :authenticate_request!, only: :routing_error
+
+  def routing_error
+    render json: {error: "Invalid route"}
+  end
 
   protected
+
+  def abc
+    # sleep(2)
+  end
 
   # Validates the token and user and sets the @current_user scope
   def authenticate_request!

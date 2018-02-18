@@ -22,7 +22,7 @@ class Api::V1::MoviesController < ApplicationController
       movie = Movie.new(movie_params)
       if movie.save
         movie.image.attach(image_params[:image]) if image_params[:image].present?
-        render json: { status: "SUCCESS" }, status: :ok
+        render json: { status: "SUCCESS", movie: movie.build_json }, status: :ok
       else
         render json: { status: "FAILED", error: movie.errors.full_messages.join("\n") }, status: :ok
       end
