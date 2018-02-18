@@ -1,10 +1,7 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
-  namespace :api do
-    namespace :v1 do
-    end
-  end
+
   namespace :api do
     namespace :v1 do
       resources :products, only: [:index]
@@ -15,5 +12,7 @@ Rails.application.routes.draw do
       resources :registrations, only: [:create]
     end
   end
+
+  get '*unmatched_route', :to => 'application#routing_error'
 
 end
