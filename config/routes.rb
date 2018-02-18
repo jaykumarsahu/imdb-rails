@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '*unmatched_route', :to => 'application#routing_error'
   root to: 'application#root'
 
 end
