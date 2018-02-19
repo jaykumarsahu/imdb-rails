@@ -19,6 +19,7 @@ gem 'jwt'
 gem 'bcrypt'
 gem 'sidekiq'
 gem 'draper'
+gem 'aws-sdk', group: :production
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
