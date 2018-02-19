@@ -1,23 +1,13 @@
 class ApplicationController < ActionController::API
 
-  before_action :abc, :authenticate_request!
+  before_action :authenticate_request!
   skip_before_action :authenticate_request!, only: [ :root ]
 
   def root
     render plain: '<h1 style="text-align: center;">Welcome to IMDB-rails API.</h1>'.html_safe
   end
 
-  # def routing_error
-  #   unless request.path.split('/').include? ('rails'||'active_storage')
-  #     render json: {error: "Invalid route"}
-  #   end
-  # end
-
   protected
-
-  def abc
-    # sleep(2)
-  end
 
   # Validates the token and user and sets the @current_user scope
   def authenticate_request!
