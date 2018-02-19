@@ -9,7 +9,6 @@ class Api::V1::MoviesController < ApplicationController
   end
 
   def show
-    sleep(2)
     if @movie.present?
       render json: { status: "SUCCESS", movie: @movie.build_json}, status: :ok
     else
