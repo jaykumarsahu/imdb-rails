@@ -617,7 +617,7 @@ GEM
       activesupport (~> 5.0)
       request_store (~> 1.0)
     erubi (1.7.0)
-    ffi (1.9.21)
+    ffi (1.12.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
